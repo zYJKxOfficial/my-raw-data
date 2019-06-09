@@ -4,11 +4,11 @@
   "restriction": "1",
   "actions": [
     {
-      "condition": "3",
+      "condition": "0",
       "comparison": "0",
       "value": "1",
-      "iftrue": "2",
-      "iftrueVal": "13",
+      "iftrue": "3",
+      "iftrueVal": "4",
       "iffalse": "0",
       "iffalseVal": "",
       "name": "Check Parameters"
@@ -37,7 +37,7 @@
     {
       "storage": "1",
       "varName": "failed",
-      "message": "You failed to grab a piece of role info! Here is the wright format!\n**c!user @rolename**",
+      "message": "You failed to grab a piece of role info! Here is the right format!\n**!roleinfo rolename**",
       "name": "Set Embed Description"
     },
     {
@@ -50,64 +50,81 @@
       "name": "Send Embed Message"
     },
     {
-      "role": "0",
-      "varName": "",
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "rolename",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "1",
+      "find": "${tempVars(\"rolename\")}",
+      "storage": "1",
+      "varName": "role",
+      "name": "Find Role"
+    },
+    {
+      "role": "3",
+      "varName": "role",
       "info": "1",
       "storage": "1",
       "varName2": "roleid",
       "name": "Store Role Info"
     },
     {
-      "role": "0",
-      "varName": "",
+      "role": "3",
+      "varName": "role",
       "info": "2",
       "storage": "1",
       "varName2": "rolename",
       "name": "Store Role Info"
     },
     {
-      "role": "0",
-      "varName": "",
+      "role": "3",
+      "varName": "role",
       "info": "3",
       "storage": "1",
       "varName2": "rolecolor",
       "name": "Store Role Info"
     },
     {
-      "role": "0",
-      "varName": "",
+      "role": "3",
+      "varName": "role",
       "info": "4",
       "storage": "1",
       "varName2": "roleposition",
       "name": "Store Role Info"
     },
     {
-      "role": "0",
-      "varName": "",
+      "role": "3",
+      "varName": "role",
       "info": "5",
       "storage": "1",
       "varName2": "roletimestamp",
       "name": "Store Role Info"
     },
     {
-      "role": "0",
-      "varName": "",
+      "role": "3",
+      "varName": "role",
       "info": "6",
       "storage": "1",
       "varName2": "rolementionable",
       "name": "Store Role Info"
     },
     {
-      "role": "0",
-      "varName": "",
+      "role": "3",
+      "varName": "role",
       "info": "9",
       "storage": "1",
       "varName2": "rolemembers",
       "name": "Store Role Info"
     },
     {
-      "role": "0",
-      "varName": "",
+      "role": "3",
+      "varName": "role",
       "info": "7",
       "storage": "1",
       "varName2": "seperatebyothers",
