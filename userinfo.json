@@ -94,7 +94,7 @@
       "name": "Store Member Info"
     },
     {
-      "title": "${mentionedUser} Info",
+      "title": "${tempVars(\"username\")}'s Info",
       "author": "",
       "color": "RANDOM",
       "url": "",
@@ -279,7 +279,7 @@
       "name": "Store Member Info"
     },
     {
-      "title": "${member} Info",
+      "title": "${tempVars(\"username1\")}'s Info",
       "author": "",
       "color": "RANDOM",
       "url": "",
