@@ -10,7 +10,7 @@
       "iftrue": "0",
       "iftrueVal": "",
       "iffalse": "2",
-      "iffalseVal": "23",
+      "iffalseVal": "24",
       "name": "Check Parameters"
     },
     {
@@ -118,6 +118,14 @@
       "storage": "1",
       "varName": "embed",
       "fieldName": "**Username**",
+      "message": "${tempVars(\"username\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "**Username w/ Tag**",
       "message": "${tempVars(\"tag\")}",
       "inline": "0",
       "name": "Add Embed Field"
@@ -294,7 +302,7 @@
     {
       "storage": "1",
       "varName": "reembed",
-      "fieldName": "Username",
+      "fieldName": "**Username**",
       "message": "${tempVars(\"username1\")}",
       "inline": "0",
       "name": "Add Embed Field"
@@ -302,7 +310,7 @@
     {
       "storage": "1",
       "varName": "reembed",
-      "fieldName": "Username w/ Tag",
+      "fieldName": "**Username w/ Tag**",
       "message": "${tempVars(\"userwithhashtag\")}",
       "inline": "0",
       "name": "Add Embed Field"
@@ -310,7 +318,7 @@
     {
       "storage": "1",
       "varName": "reembed",
-      "fieldName": "Nickname",
+      "fieldName": "**Nickname**",
       "message": "${tempVars(\"displayname2\")}",
       "inline": "0",
       "name": "Add Embed Field"
@@ -318,7 +326,7 @@
     {
       "storage": "1",
       "varName": "reembed",
-      "fieldName": "User ID",
+      "fieldName": "**User ID**",
       "message": "${tempVars(\"userid2\")}",
       "inline": "0",
       "name": "Add Embed Field"
@@ -326,7 +334,7 @@
     {
       "storage": "1",
       "varName": "reembed",
-      "fieldName": "Status",
+      "fieldName": "**Status**",
       "message": "${tempVars(\"memberstatus\")}",
       "inline": "0",
       "name": "Add Embed Field"
@@ -334,7 +342,7 @@
     {
       "storage": "1",
       "varName": "reembed",
-      "fieldName": "Join Date",
+      "fieldName": "**Join Date**",
       "message": "${tempVars(\"joindate2\")}",
       "inline": "0",
       "name": "Add Embed Field"
@@ -342,7 +350,7 @@
     {
       "storage": "1",
       "varName": "reembed",
-      "fieldName": "Account Created",
+      "fieldName": "**Account Created**",
       "message": "${tempVars(\"accountcreated2\")}",
       "inline": "0",
       "name": "Add Embed Field"
@@ -350,7 +358,7 @@
     {
       "storage": "1",
       "varName": "reembed",
-      "fieldName": "Is Bannable?",
+      "fieldName": "**Is Bannable?**",
       "message": "${tempVars(\"bannable4\")}",
       "inline": "0",
       "name": "Add Embed Field"
@@ -358,7 +366,7 @@
     {
       "storage": "1",
       "varName": "reembed",
-      "fieldName": "Role List",
+      "fieldName": "**Role List**",
       "message": "${tempVars(\"rolelist3\")}",
       "inline": "0",
       "name": "Add Embed Field"
