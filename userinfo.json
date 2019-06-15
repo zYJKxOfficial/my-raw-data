@@ -4,53 +4,82 @@
   "restriction": "1",
   "actions": [
     {
+      "comment": "Created By: iidxntmodalt#8629 | Edited By: TheMonDon#1721",
+      "color": "#ff80ff",
+      "name": "Comment"
+    },
+    {
       "condition": "1",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "3",
+      "iftrueVal": "8",
+      "iffalse": "0",
+      "iffalseVal": "16",
+      "name": "Check Parameters"
+    },
+    {
+      "condition": "0",
       "comparison": "0",
       "value": "1",
       "iftrue": "0",
       "iftrueVal": "",
-      "iffalse": "2",
+      "iffalse": "3",
       "iffalseVal": "24",
       "name": "Check Parameters"
     },
     {
-      "member": "0",
-      "varName": "user",
-      "info": "2",
+      "info": "0",
+      "infoIndex": "1",
       "storage": "1",
-      "varName2": "username",
+      "varName": "userid",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "0",
+      "find": "${tempVars(\"userid\")}",
+      "storage": "1",
+      "varName": "userid_user",
+      "find2": "0",
+      "name": "Find Member"
+    },
+    {
+      "member": "2",
+      "varName": "userid_user",
+      "info": "0",
+      "storage": "1",
+      "varName2": "ment_obj",
       "name": "Store Member Info"
+    },
+    {
+      "member": "2",
+      "varName": "userid_user",
+      "info": "18",
+      "storage": "1",
+      "varName2": "joindate",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "2",
+      "varName": "userid_user",
+      "info": "21",
+      "storage": "1",
+      "varName2": "accountcreated",
+      "name": "Store Member Info"
+    },
+    {
+      "count": "4",
+      "name": "Skip Actions"
+    },
+    {
+      "name": "End Action Sequence"
     },
     {
       "member": "0",
       "varName": "user",
-      "info": "3",
+      "info": "0",
       "storage": "1",
-      "varName2": "displayname",
-      "name": "Store Member Info"
-    },
-    {
-      "member": "0",
-      "varName": "user",
-      "info": "22",
-      "storage": "1",
-      "varName2": "tag",
-      "name": "Store Member Info"
-    },
-    {
-      "member": "0",
-      "varName": "user",
-      "info": "15",
-      "storage": "1",
-      "varName2": "status",
-      "name": "Store Member Info"
-    },
-    {
-      "member": "0",
-      "varName": "user",
-      "info": "16",
-      "storage": "1",
-      "varName2": "avatar",
+      "varName2": "ment_obj",
       "name": "Store Member Info"
     },
     {
@@ -70,39 +99,24 @@
       "name": "Store Member Info"
     },
     {
-      "member": "0",
-      "varName": "user",
-      "info": "17",
-      "storage": "1",
-      "varName2": "rolelist",
-      "name": "Store Member Info"
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "//RS contents\nfunction getJoinRank(ID, guild) { // Call it with the ID of the user and the guild\n  if (!guild.member(ID)) return; // It will return undefined if the ID is not valid\n\n  let arr = guild.members.array(); // Create an array with every member\n  arr.sort((a, b) => a.joinedAt - b.joinedAt); // Sort them by join date\n\n  for (let index = 0; index < arr.length; index++) { // Loop though every element\n    if (arr[index].id == ID) return index; // When you find the user, return it's position\n  }\n}\nActions.storeValue(getJoinRank(tempVars(\"ment_obj\").user.id, msg.guild) , 1, \"joinPosition\", cache);\n//Creduts to General Wrex for helping making this work",
+      "storage": "0",
+      "varName": "rank",
+      "name": "Run Script"
     },
     {
-      "member": "0",
-      "varName": "user",
-      "info": "13",
-      "storage": "1",
-      "varName2": "bannable",
-      "name": "Store Member Info"
-    },
-    {
-      "member": "0",
-      "varName": "user",
-      "info": "1",
-      "storage": "1",
-      "varName2": "userID",
-      "name": "Store Member Info"
-    },
-    {
-      "title": "${tempVars(\"username\")}'s Info",
-      "author": "",
+      "title": "${tempVars(\"ment_obj\").user.username}'s Info",
+      "author": "${member.displayName}",
       "color": "RANDOM",
       "url": "",
-      "authorIcon": "",
+      "authorIcon": "${msg.author.displayAvatarURL}",
       "authorUrl": "",
       "imageUrl": "",
-      "thumbUrl": "${tempVars(\"avatar\")}",
+      "thumbUrl": "${tempVars(\"ment_obj\").user.displayAvatarURL}",
       "timestamp": "true",
+      "debug": "false",
       "text": "",
       "year": "",
       "month": "",
@@ -118,7 +132,7 @@
       "storage": "1",
       "varName": "embed",
       "fieldName": "**Username**",
-      "message": "${tempVars(\"username\")}",
+      "message": "${tempVars(\"ment_obj\").user.username}",
       "inline": "0",
       "name": "Add Embed Field"
     },
@@ -126,7 +140,7 @@
       "storage": "1",
       "varName": "embed",
       "fieldName": "**Username w/ Tag**",
-      "message": "${tempVars(\"tag\")}",
+      "message": "${tempVars(\"ment_obj\").user.tag}",
       "inline": "0",
       "name": "Add Embed Field"
     },
@@ -134,7 +148,7 @@
       "storage": "1",
       "varName": "embed",
       "fieldName": "**Nickname**",
-      "message": "${tempVars(\"displayname\")}",
+      "message": "${tempVars(\"ment_obj\").displayName}",
       "inline": "0",
       "name": "Add Embed Field"
     },
@@ -142,7 +156,7 @@
       "storage": "1",
       "varName": "embed",
       "fieldName": "User ID",
-      "message": "${tempVars(\"userID\")}",
+      "message": "${tempVars(\"ment_obj\").user.id}",
       "inline": "0",
       "name": "Add Embed Field"
     },
@@ -150,7 +164,7 @@
       "storage": "1",
       "varName": "embed",
       "fieldName": "**Status**",
-      "message": "${tempVars(\"status\")}",
+      "message": "${tempVars(\"ment_obj\").presence.status}",
       "inline": "0",
       "name": "Add Embed Field"
     },
@@ -174,7 +188,15 @@
       "storage": "1",
       "varName": "embed",
       "fieldName": "**Is Bannable?**",
-      "message": "${tempVars(\"bannable\")}",
+      "message": "${tempVars(\"ment_obj\").bannable}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "**Join Position**",
+      "message": "${tempVars(\"joinPosition\")+1}",
       "inline": "0",
       "name": "Add Embed Field"
     },
@@ -182,7 +204,7 @@
       "storage": "1",
       "varName": "embed",
       "fieldName": "**Roles**",
-      "message": "${tempVars(\"rolelist\")}",
+      "message": "${tempVars(\"ment_obj\").roles.array()}",
       "inline": "0",
       "name": "Add Embed Field"
     },
@@ -201,49 +223,9 @@
     {
       "member": "1",
       "varName": "",
-      "info": "1",
-      "storage": "1",
-      "varName2": "userid2",
-      "name": "Store Member Info"
-    },
-    {
-      "member": "1",
-      "varName": "",
-      "info": "2",
-      "storage": "1",
-      "varName2": "username1",
-      "name": "Store Member Info"
-    },
-    {
-      "member": "1",
-      "varName": "",
-      "info": "22",
-      "storage": "1",
-      "varName2": "userwithhashtag",
-      "name": "Store Member Info"
-    },
-    {
-      "member": "1",
-      "varName": "",
-      "info": "15",
-      "storage": "1",
-      "varName2": "memberstatus",
-      "name": "Store Member Info"
-    },
-    {
-      "member": "1",
-      "varName": "",
-      "info": "16",
-      "storage": "1",
-      "varName2": "avatarurl2",
-      "name": "Store Member Info"
-    },
-    {
-      "member": "1",
-      "varName": "",
       "info": "18",
       "storage": "1",
-      "varName2": "joindate2",
+      "varName2": "joindate",
       "name": "Store Member Info"
     },
     {
@@ -251,43 +233,28 @@
       "varName": "",
       "info": "21",
       "storage": "1",
-      "varName2": "accountcreated2",
+      "varName2": "accountcreated",
       "name": "Store Member Info"
     },
     {
-      "member": "1",
-      "varName": "",
-      "info": "17",
-      "storage": "1",
-      "varName2": "rolelist3",
-      "name": "Store Member Info"
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "//RS contents\nfunction getJoinRank(ID, guild) { // Call it with the ID of the user and the guild\n  if (!guild.member(ID)) return; // It will return undefined if the ID is not valid\n\n  let arr = guild.members.array(); // Create an array with every member\n  arr.sort((a, b) => a.joinedAt - b.joinedAt); // Sort them by join date\n\n  for (let index = 0; index < arr.length; index++) { // Loop though every element\n    if (arr[index].id == ID) return index; // When you find the user, return it's position\n  }\n}\nActions.storeValue(getJoinRank(msg.author.id, msg.guild) , 1, \"joinPosition\", cache);\n//Creduts to General Wrex for helping making this work",
+      "storage": "0",
+      "varName": "rank",
+      "name": "Run Script"
     },
     {
-      "member": "1",
-      "varName": "",
-      "info": "13",
-      "storage": "1",
-      "varName2": "bannable4",
-      "name": "Store Member Info"
-    },
-    {
-      "member": "1",
-      "varName": "",
-      "info": "3",
-      "storage": "1",
-      "varName2": "displayname2",
-      "name": "Store Member Info"
-    },
-    {
-      "title": "${tempVars(\"username1\")}'s Info",
-      "author": "",
+      "title": "${msg.author.username}'s Info",
+      "author": "${member.displayName}",
       "color": "RANDOM",
       "url": "",
-      "authorIcon": "",
+      "authorIcon": "${msg.author.displayAvatarURL}",
       "authorUrl": "",
       "imageUrl": "",
-      "thumbUrl": "${tempVars(\"avatarurl2\")}",
+      "thumbUrl": "${msg.author.displayAvatarURL}",
       "timestamp": "true",
+      "debug": "false",
       "text": "",
       "year": "",
       "month": "",
@@ -303,7 +270,7 @@
       "storage": "1",
       "varName": "reembed",
       "fieldName": "**Username**",
-      "message": "${tempVars(\"username1\")}",
+      "message": "${msg.author.username}",
       "inline": "0",
       "name": "Add Embed Field"
     },
@@ -311,7 +278,7 @@
       "storage": "1",
       "varName": "reembed",
       "fieldName": "**Username w/ Tag**",
-      "message": "${tempVars(\"userwithhashtag\")}",
+      "message": "${msg.author.tag}",
       "inline": "0",
       "name": "Add Embed Field"
     },
@@ -319,7 +286,7 @@
       "storage": "1",
       "varName": "reembed",
       "fieldName": "**Nickname**",
-      "message": "${tempVars(\"displayname2\")}",
+      "message": "${member.displayName}",
       "inline": "0",
       "name": "Add Embed Field"
     },
@@ -327,7 +294,7 @@
       "storage": "1",
       "varName": "reembed",
       "fieldName": "**User ID**",
-      "message": "${tempVars(\"userid2\")}",
+      "message": "${msg.author.id}",
       "inline": "0",
       "name": "Add Embed Field"
     },
@@ -335,7 +302,7 @@
       "storage": "1",
       "varName": "reembed",
       "fieldName": "**Status**",
-      "message": "${tempVars(\"memberstatus\")}",
+      "message": "${user.presence.status}",
       "inline": "0",
       "name": "Add Embed Field"
     },
@@ -343,7 +310,7 @@
       "storage": "1",
       "varName": "reembed",
       "fieldName": "**Join Date**",
-      "message": "${tempVars(\"joindate2\")}",
+      "message": "${tempVars(\"joindate\")}",
       "inline": "0",
       "name": "Add Embed Field"
     },
@@ -351,7 +318,7 @@
       "storage": "1",
       "varName": "reembed",
       "fieldName": "**Account Created**",
-      "message": "${tempVars(\"accountcreated2\")}",
+      "message": "${tempVars(\"accountcreated\")}",
       "inline": "0",
       "name": "Add Embed Field"
     },
@@ -359,7 +326,15 @@
       "storage": "1",
       "varName": "reembed",
       "fieldName": "**Is Bannable?**",
-      "message": "${tempVars(\"bannable4\")}",
+      "message": "${member.bannable}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "reembed",
+      "fieldName": "**Join Position**",
+      "message": "${tempVars(\"joinPosition\")+1}",
       "inline": "0",
       "name": "Add Embed Field"
     },
@@ -367,7 +342,7 @@
       "storage": "1",
       "varName": "reembed",
       "fieldName": "**Role List**",
-      "message": "${tempVars(\"rolelist3\")}",
+      "message": "${member.roles.array()}",
       "inline": "0",
       "name": "Add Embed Field"
     },
@@ -381,5 +356,9 @@
       "name": "Send Embed Message"
     }
   ],
-  "_id": "aVVNz"
+  "_id": "aVVNz",
+  "_aliases": [
+    "ui",
+    "uinfo"
+  ]
 }
