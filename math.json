@@ -1,0 +1,225 @@
+{
+  "name": "math",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "qxwXU",
+  "actions": [
+    {
+      "comment": "Created by: iidxntmodalt#8629",
+      "color": "#2c21f8",
+      "name": "Comment"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "equation",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "1",
+      "varName": "equation",
+      "comparison": "1",
+      "value": "add",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "9",
+      "name": "Check Variable"
+    },
+    {
+      "info": "0",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "firstnumber",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "0",
+      "infoIndex": "3",
+      "storage": "1",
+      "varName": "secondnumber",
+      "name": "Store Command Params"
+    },
+    {
+      "FirstNumber": "${tempVars(\"firstnumber\")}",
+      "info": "0",
+      "SecondNumber": "${tempVars(\"secondnumber\")}",
+      "storage": "1",
+      "varName": "answer",
+      "name": "Basic Math Operation"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**${tempVars(\"firstnumber\")}** + **${tempVars(\"secondnumber\")}** = **${tempVars(\"answer\")}**",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "equation",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "1",
+      "varName": "equation",
+      "comparison": "1",
+      "value": "subtract",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "16",
+      "name": "Check Variable"
+    },
+    {
+      "info": "0",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "firstnumber",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "0",
+      "infoIndex": "3",
+      "storage": "1",
+      "varName": "secondnumber",
+      "name": "Store Command Params"
+    },
+    {
+      "FirstNumber": "${tempVars(\"firstnumber\")}",
+      "info": "1",
+      "SecondNumber": "${tempVars(\"secondnumber\")}",
+      "storage": "1",
+      "varName": "answer",
+      "name": "Basic Math Operation"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**${tempVars(\"firstnumber\")}** - **${tempVars(\"secondnumber\")}** = **${tempVars(\"answer\")}**",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "equation",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "1",
+      "varName": "equation",
+      "comparison": "1",
+      "value": "multiply",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "23",
+      "name": "Check Variable"
+    },
+    {
+      "info": "0",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "firstnumber",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "0",
+      "infoIndex": "3",
+      "storage": "1",
+      "varName": "secondnumber",
+      "name": "Store Command Params"
+    },
+    {
+      "FirstNumber": "${tempVars(\"firstnumber\")}",
+      "info": "2",
+      "SecondNumber": "${tempVars(\"secondnumber\")}",
+      "storage": "1",
+      "varName": "answer",
+      "name": "Basic Math Operation"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**${tempVars(\"firstnumber\")}** x **${tempVars(\"secondnumber\")}** = **${tempVars(\"answer\")}**",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "equation",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "1",
+      "varName": "equation",
+      "comparison": "1",
+      "value": "divide",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "30",
+      "name": "Check Variable"
+    },
+    {
+      "info": "0",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "firstnumber",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "0",
+      "infoIndex": "3",
+      "storage": "1",
+      "varName": "secondnumber",
+      "name": "Store Command Params"
+    },
+    {
+      "FirstNumber": "${tempVars(\"firstnumber\")}",
+      "info": "3",
+      "SecondNumber": "${tempVars(\"secondnumber\")}",
+      "storage": "1",
+      "varName": "answer",
+      "name": "Basic Math Operation"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**${tempVars(\"firstnumber\")}** ÷ **${tempVars(\"secondnumber\")}** = **${tempVars(\"answer\")}**",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Did you even want to do math? Here is an example of what you need to do to do math!\n**c!math [add, subtract, multiply, divide] [first#] [second#]**",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ]
+}
